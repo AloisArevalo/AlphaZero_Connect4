@@ -83,15 +83,15 @@ Valores: `0` o `1`.
 
 En cada nodo se selecciona la acción que maximiza:
 
-\[
+$$
 Q(s,a) + c_{\text{puct}} \cdot P(s,a) \cdot \frac{\sqrt{\sum_b N(s,b)}}{1 + N(s,a)}
-\]
+$$
 
 Donde:
-- \(Q(s,a)\): valor medio acumulado del hijo
-- \(P(s,a)\): prior de la red neuronal
-- \(N(s,a)\): número de visitas del hijo
-- \(c_{\text{puct}}\): constante de exploración (por defecto `1.0`)
+- $Q(s,a)$: valor medio acumulado del hijo
+- $P(s,a)$: prior de la red neuronal
+- $N(s,a)$: número de visitas del hijo
+- $c_{\text{puct}}$: constante de exploración (por defecto `1.0`)
 
 En el nodo raíz se añade **ruido Dirichlet** para fomentar la exploración durante el auto-juego.
 
