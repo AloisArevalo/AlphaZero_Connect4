@@ -166,3 +166,72 @@
 2026-06-17 23:43:27 | INFO | Iteración 1 | Generando 100 partidas...
 2026-06-17 23:43:30 | INFO | Entrenamiento interrumpido por el usuario.
 2026-06-17 23:43:30 | INFO | Checkpoint final guardado en checkpoints/best_model.pt
+2026-06-17 23:49:53 | INFO | ============================================================
+2026-06-17 23:49:53 | INFO | AlphaZero Connect 4 — Inicio de entrenamiento
+2026-06-17 23:49:53 | INFO | Dispositivo: cuda
+2026-06-17 23:49:53 | INFO | MCTS simulaciones: 50
+2026-06-17 23:49:53 | INFO | Búfer máximo: 100000
+2026-06-17 23:49:53 | INFO | ============================================================
+2026-06-17 23:49:54 | INFO | Checkpoint cargado: iteración 1, 0 partidas previas
+2026-06-17 23:49:54 | INFO | Iteración 1 | Generando 100 partidas...
+2026-06-17 23:50:58 | INFO | Entrenamiento interrumpido por el usuario.
+2026-06-17 23:50:58 | INFO | Checkpoint final guardado en checkpoints/best_model.pt
+2026-06-17 23:52:48 | INFO | ============================================================
+2026-06-17 23:52:48 | INFO | AlphaZero Connect 4 — Inicio de entrenamiento
+2026-06-17 23:52:48 | INFO | Dispositivo: cuda
+2026-06-17 23:52:48 | INFO | MCTS simulaciones: 50
+2026-06-17 23:52:48 | INFO | Búfer máximo: 100000
+2026-06-17 23:52:48 | INFO | ============================================================
+2026-06-17 23:52:49 | INFO | Checkpoint cargado: iteración 1, 0 partidas previas
+2026-06-17 23:52:49 | INFO | Iteración 1 | Generando 100 partidas...
+2026-06-17 23:52:58 | INFO | Entrenamiento interrumpido por el usuario.
+2026-06-17 23:52:58 | INFO | Checkpoint final guardado en checkpoints/best_model.pt
+2026-06-17 23:54:41 | INFO | ============================================================
+2026-06-17 23:54:41 | INFO | AlphaZero Connect 4 — Inicio de entrenamiento
+2026-06-17 23:54:41 | INFO | Dispositivo: cuda
+2026-06-17 23:54:41 | INFO | MCTS simulaciones: 50
+2026-06-17 23:54:41 | INFO | Búfer máximo: 100000
+2026-06-17 23:54:41 | INFO | ============================================================
+2026-06-17 23:54:42 | INFO | Checkpoint cargado: iteración 1, 0 partidas previas
+2026-06-17 23:54:42 | INFO | Iteración 1 | Generando 100 partidas...
+2026-06-17 23:59:03 | INFO |   Auto-juego: 3465 estados | Búfer: 3465/100000 | Tiempo: 261.1s
+2026-06-17 23:59:07 | INFO |   Entrenamiento: loss=1.5683 (value=0.2186, policy=1.0400) | Tiempo: 4.1s
+2026-06-17 23:59:07 | INFO | Iteración 1 completada en 265.2s | Total partidas: 100
+2026-06-17 23:59:07 | INFO | ------------------------------------------------------------
+2026-06-17 23:59:07 | INFO | Iteración 2 | Generando 100 partidas...
+2026-06-18 00:03:45 | INFO |   Auto-juego: 3594 estados | Búfer: 7059/100000 | Tiempo: 278.2s
+2026-06-18 00:03:53 | INFO |   Entrenamiento: loss=1.4891 (value=0.1874, policy=1.0052) | Tiempo: 7.9s
+2026-06-18 00:03:53 | INFO |   Torneo de evaluación (40 partidas)...
+2026-06-18 00:07:13 | INFO |   Tasa de victorias del modelo actual: 0.0% | Tiempo: 199.6s
+2026-06-18 00:07:13 | INFO |   Modelo actual no supera el umbral (55%). Se mantiene el mejor modelo anterior.
+2026-06-18 00:07:13 | INFO | Iteración 2 completada en 485.7s | Total partidas: 200
+2026-06-18 00:07:13 | INFO | ------------------------------------------------------------
+2026-06-18 00:07:13 | INFO | Iteración 3 | Generando 100 partidas...
+2026-06-18 00:11:50 | INFO |   Auto-juego: 3594 estados | Búfer: 10653/100000 | Tiempo: 277.4s
+2026-06-18 00:12:02 | INFO |   Entrenamiento: loss=1.5698 (value=0.2213, policy=1.0446) | Tiempo: 12.0s
+2026-06-18 00:12:02 | INFO | Iteración 3 completada en 289.4s | Total partidas: 300
+2026-06-18 00:12:02 | INFO | ------------------------------------------------------------
+2026-06-18 00:12:02 | INFO | Iteración 4 | Generando 100 partidas...
+2026-06-18 00:16:28 | INFO |   Auto-juego: 3468 estados | Búfer: 14121/100000 | Tiempo: 266.4s
+2026-06-18 00:16:45 | INFO |   Entrenamiento: loss=1.4647 (value=0.1773, policy=1.0140) | Tiempo: 16.3s
+2026-06-18 00:16:45 | INFO |   Torneo de evaluación (40 partidas)...
+2026-06-18 00:20:46 | INFO |   Tasa de victorias del modelo actual: 50.0% | Tiempo: 241.1s
+2026-06-18 00:20:46 | INFO |   Modelo actual no supera el umbral (55%). Se mantiene el mejor modelo anterior.
+2026-06-18 00:20:46 | INFO | Iteración 4 completada en 523.7s | Total partidas: 400
+2026-06-18 00:20:46 | INFO | ------------------------------------------------------------
+2026-06-18 00:20:46 | INFO | Iteración 5 | Generando 100 partidas...
+2026-06-18 00:25:20 | INFO |   Auto-juego: 3560 estados | Búfer: 17681/100000 | Tiempo: 274.7s
+2026-06-18 00:25:41 | INFO |   Entrenamiento: loss=1.6172 (value=0.2366, policy=1.0769) | Tiempo: 20.5s
+2026-06-18 00:25:41 | INFO | Iteración 5 completada en 295.2s | Total partidas: 500
+2026-06-18 00:25:41 | INFO | ------------------------------------------------------------
+2026-06-18 00:25:41 | INFO | Iteración 6 | Generando 100 partidas...
+2026-06-18 00:30:38 | INFO |   Auto-juego: 3404 estados | Búfer: 21085/100000 | Tiempo: 297.7s
+2026-06-18 00:31:03 | INFO |   Entrenamiento: loss=1.4999 (value=0.1871, policy=1.0357) | Tiempo: 25.0s
+2026-06-18 00:31:03 | INFO |   Torneo de evaluación (40 partidas)...
+2026-06-18 00:35:18 | INFO |   Tasa de victorias del modelo actual: 50.0% | Tiempo: 254.7s
+2026-06-18 00:35:18 | INFO |   Modelo actual no supera el umbral (55%). Se mantiene el mejor modelo anterior.
+2026-06-18 00:35:18 | INFO | Iteración 6 completada en 577.4s | Total partidas: 600
+2026-06-18 00:35:18 | INFO | ------------------------------------------------------------
+2026-06-18 00:35:18 | INFO | Iteración 7 | Generando 100 partidas...
+2026-06-18 00:38:16 | INFO | Entrenamiento interrumpido por el usuario.
+2026-06-18 00:38:16 | INFO | Checkpoint final guardado en checkpoints/best_model.pt
