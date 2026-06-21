@@ -56,18 +56,15 @@ class GameEngine:
         self.game = Connect4()
         self.mcts = MCTS(self.network, self.config, self.device)
     
-    def get_ai_move(self, state):
+    def get_ai_move(self):
         """
         Obtiene el siguiente movimiento de la IA usando MCTS.
         
-        Args:
-            state: Estado actual del juego (numpy array shape (3, 6, 7))
-            
         Returns:
             int: Columna donde la IA quiere jugar (0-6)
         """
-        # Ejecutar MCTS desde la perspectiva del jugador actual
-        action_probs = self.mcts.search(state, num_simulations=self.config.mcts_simulations)
+        # Ejecutar MCTS desde la perspectiva del estado actual del juego
+        action_probs = self.mcts.search(self.game, num_simulations=self.config.mcts_simulations)
         
         # Seleccionar movimiento con mayor probabilidad (determinista en juego)
         best_action = int(action_probs.argmax())

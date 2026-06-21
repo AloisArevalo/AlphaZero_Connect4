@@ -222,7 +222,7 @@ class Connect4GUI:
             try:
                 time.sleep(0.5)  # Pequeño delay para que se vea más natural
                 
-                ai_move = self.engine.get_ai_move(self.state)
+                ai_move = self.engine.get_ai_move()
                 
                 # Hacer el movimiento
                 new_state, valid, is_terminal, outcome = self.engine.step(ai_move)

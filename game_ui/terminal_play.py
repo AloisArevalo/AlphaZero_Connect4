@@ -92,7 +92,7 @@ def main():
             print(f"{Color.CYAN}TURNO DE LA IA{Color.RESET}")
             print("La IA esta pensando...")
             
-            ai_move = engine.get_ai_move(state)
+            ai_move = engine.get_ai_move()
             print(f"La IA elige columna: {ai_move}")
             
             new_state, valid, is_terminal, outcome = engine.step(ai_move)
