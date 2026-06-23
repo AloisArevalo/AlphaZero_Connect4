@@ -424,3 +424,449 @@
 2026-06-18 12:45:54 | INFO | [92m[1m======================================================================[0m
 2026-06-18 12:45:54 | INFO | [92m[1m✓ Auto-entrenamiento finalizado correctamente[0m
 2026-06-18 12:45:54 | INFO | [92m[1m======================================================================[0m
+2026-06-23 04:19:13 | INFO | ======================================================================
+2026-06-23 04:19:13 | INFO | [92m[1m======================================================================[0m
+2026-06-23 04:19:13 | INFO | [92m[1mIniciando Auto-Entrenamiento Inteligente AlphaZero[0m
+2026-06-23 04:19:13 | INFO | [92m[1m======================================================================[0m
+2026-06-23 04:19:13 | INFO | Dispositivo: cuda
+2026-06-23 04:19:13 | INFO | MCTS simulaciones: 100 | Épocas: 3 | LR: 0.001
+2026-06-23 04:19:13 | INFO | dirichlet_alpha: 0.5 | c_puct: 1.5 | Umbral: 0.52
+2026-06-23 04:19:13 | INFO | ======================================================================
+2026-06-23 04:19:15 | INFO | [92m[1m✓ Checkpoint cargado exitosamente:[0m
+2026-06-23 04:19:15 | INFO |   - Iteración: 57
+2026-06-23 04:19:15 | INFO |   - Partidas jugadas: 5500
+2026-06-23 04:19:15 | INFO |   - Ruta: checkpoints/best_model.pt
+2026-06-23 04:19:15 | INFO | [92m[1m✓ Métricas previas cargadas: 24 registros[0m
+2026-06-23 04:19:15 | INFO | ======================================================================
+2026-06-23 04:19:15 | DEBUG | Temperatura GPU: [92m57°C[0m ✓
+2026-06-23 04:19:15 | INFO | [96m--- Iteración 58 | MCTS: 100 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 04:28:47 | INFO | [92m  ✓ Auto-juego:[0m 3428 estados | Búfer: 3428/100000 | Empates: 2.0% | Longitud media: 34.3
+2026-06-23 04:28:49 | INFO | [92m  ✓ Entrenamiento:[0m loss=1.9415 (value=0.4003, policy=1.2308) | Val.Acc=88.2% | Entropía=1.233
+2026-06-23 04:28:49 | INFO | [95m  ⚙️  Torneo de evaluación (40 partidas)...[0m
+2026-06-23 04:32:50 | INFO | [92m  ✓ Tasa de victorias vs mejor:[0m [93m50.0%[0m | Empates eval: 0.0%
+2026-06-23 04:32:50 | DEBUG | Métricas actualizadas (25 registros total)
+2026-06-23 04:32:50 | INFO | [96m  ℹ️  Modelo no superó umbral (52.00%). Continuando entrenamiento.[0m
+2026-06-23 04:32:50 | INFO | [93m  ⚠️  Contador de estancamiento: 1/5[0m
+2026-06-23 04:32:50 | INFO | [90m---------------------------------------------------------------------[0m
+2026-06-23 04:32:50 | DEBUG | Temperatura GPU: [92m65°C[0m ✓
+2026-06-23 04:32:50 | INFO | [96m--- Iteración 59 | MCTS: 100 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 04:42:00 | INFO | [92m  ✓ Auto-juego:[0m 3429 estados | Búfer: 6857/100000 | Empates: 7.0% | Longitud media: 34.3
+2026-06-23 04:42:03 | INFO | [92m  ✓ Entrenamiento:[0m loss=1.7480 (value=0.2918, policy=1.1435) | Val.Acc=91.3% | Entropía=1.143
+2026-06-23 04:42:03 | DEBUG | Temperatura GPU: [92m72°C[0m ✓
+2026-06-23 04:42:03 | INFO | [96m--- Iteración 60 | MCTS: 100 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 04:50:51 | INFO | [92m  ✓ Auto-juego:[0m 3329 estados | Búfer: 10186/100000 | Empates: 0.0% | Longitud media: 33.3
+2026-06-23 04:50:56 | INFO | [92m  ✓ Entrenamiento:[0m loss=1.6524 (value=0.2194, policy=1.1235) | Val.Acc=93.2% | Entropía=1.123
+2026-06-23 04:50:56 | INFO | [95m  ⚙️  Torneo de evaluación (40 partidas)...[0m
+2026-06-23 04:54:51 | INFO | [92m  ✓ Tasa de victorias vs mejor:[0m [93m50.0%[0m | Empates eval: 0.0%
+2026-06-23 04:54:51 | DEBUG | Métricas actualizadas (26 registros total)
+2026-06-23 04:54:51 | INFO | [96m  ℹ️  Modelo no superó umbral (52.00%). Continuando entrenamiento.[0m
+2026-06-23 04:54:51 | INFO | [93m  ⚠️  Contador de estancamiento: 2/5[0m
+2026-06-23 04:54:51 | INFO | [90m---------------------------------------------------------------------[0m
+2026-06-23 04:54:51 | DEBUG | Temperatura GPU: [92m66°C[0m ✓
+2026-06-23 04:54:51 | INFO | [96m--- Iteración 61 | MCTS: 100 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 05:03:24 | INFO | [92m  ✓ Auto-juego:[0m 3270 estados | Búfer: 13456/100000 | Empates: 3.0% | Longitud media: 32.7
+2026-06-23 05:03:31 | INFO | [92m  ✓ Entrenamiento:[0m loss=1.6426 (value=0.2198, policy=1.1200) | Val.Acc=93.1% | Entropía=1.120
+2026-06-23 05:03:31 | DEBUG | Temperatura GPU: [92m74°C[0m ✓
+2026-06-23 05:03:31 | INFO | [96m--- Iteración 62 | MCTS: 100 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 05:12:33 | INFO | [92m  ✓ Auto-juego:[0m 3419 estados | Búfer: 16875/100000 | Empates: 5.0% | Longitud media: 34.2
+2026-06-23 05:12:41 | INFO | [92m  ✓ Entrenamiento:[0m loss=1.6281 (value=0.2125, policy=1.1190) | Val.Acc=93.4% | Entropía=1.117
+2026-06-23 05:12:41 | INFO | [95m  ⚙️  Torneo de evaluación (40 partidas)...[0m
+2026-06-23 05:16:29 | INFO | [92m  ✓ Tasa de victorias vs mejor:[0m [92m100.0%[0m | Empates eval: 0.0%
+2026-06-23 05:16:29 | DEBUG | Métricas actualizadas (27 registros total)
+2026-06-23 05:16:29 | INFO | [92m[1m  🎉 ¡Nuevo mejor modelo encontrado! (100.0% > 52.00%)[0m
+2026-06-23 05:16:29 | INFO | [92m[1m  ✓ Checkpoint guardado: checkpoints/best_model.pt[0m
+2026-06-23 05:16:29 | INFO | [90m---------------------------------------------------------------------[0m
+2026-06-23 05:16:29 | DEBUG | Temperatura GPU: [92m66°C[0m ✓
+2026-06-23 05:16:29 | INFO | [96m--- Iteración 63 | MCTS: 100 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 05:25:28 | INFO | [92m  ✓ Auto-juego:[0m 3393 estados | Búfer: 20268/100000 | Empates: 2.0% | Longitud media: 33.9
+2026-06-23 05:25:37 | INFO | [92m  ✓ Entrenamiento:[0m loss=1.6044 (value=0.1972, policy=1.1169) | Val.Acc=93.8% | Entropía=1.116
+2026-06-23 05:25:37 | DEBUG | Temperatura GPU: [93m75°C[0m ✓
+2026-06-23 05:25:37 | INFO | [96m--- Iteración 64 | MCTS: 100 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 05:34:25 | INFO | [92m  ✓ Auto-juego:[0m 3356 estados | Búfer: 23624/100000 | Empates: 1.0% | Longitud media: 33.6
+2026-06-23 05:34:36 | INFO | [92m  ✓ Entrenamiento:[0m loss=1.6096 (value=0.1998, policy=1.1251) | Val.Acc=93.9% | Entropía=1.123
+2026-06-23 05:34:36 | INFO | [95m  ⚙️  Torneo de evaluación (40 partidas)...[0m
+2026-06-23 05:38:38 | INFO | [92m  ✓ Tasa de victorias vs mejor:[0m [93m0.0%[0m | Empates eval: 0.0%
+2026-06-23 05:38:38 | DEBUG | Métricas actualizadas (28 registros total)
+2026-06-23 05:38:38 | INFO | [96m  ℹ️  Modelo no superó umbral (52.00%). Continuando entrenamiento.[0m
+2026-06-23 05:38:38 | INFO | [93m  ⚠️  Contador de estancamiento: 1/5[0m
+2026-06-23 05:38:38 | INFO | [90m---------------------------------------------------------------------[0m
+2026-06-23 05:38:38 | DEBUG | Temperatura GPU: [92m67°C[0m ✓
+2026-06-23 05:38:38 | INFO | [96m--- Iteración 65 | MCTS: 100 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 05:47:32 | INFO | [92m  ✓ Auto-juego:[0m 3350 estados | Búfer: 26974/100000 | Empates: 2.0% | Longitud media: 33.5
+2026-06-23 05:47:44 | INFO | [92m  ✓ Entrenamiento:[0m loss=1.6117 (value=0.2015, policy=1.1281) | Val.Acc=93.9% | Entropía=1.127
+2026-06-23 05:47:44 | DEBUG | Temperatura GPU: [93m75°C[0m ✓
+2026-06-23 05:47:44 | INFO | [96m--- Iteración 66 | MCTS: 100 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 05:56:50 | INFO | [92m  ✓ Auto-juego:[0m 3445 estados | Búfer: 30419/100000 | Empates: 1.0% | Longitud media: 34.5
+2026-06-23 05:57:04 | INFO | [92m  ✓ Entrenamiento:[0m loss=1.5948 (value=0.1980, policy=1.1199) | Val.Acc=94.0% | Entropía=1.118
+2026-06-23 05:57:04 | INFO | [95m  ⚙️  Torneo de evaluación (40 partidas)...[0m
+2026-06-23 06:01:33 | INFO | [96m  ✓ Win rate vs aleatorio: 0.0%[0m
+2026-06-23 06:01:33 | INFO | [92m  ✓ Tasa de victorias vs mejor:[0m [93m50.0%[0m | Empates eval: 0.0%
+2026-06-23 06:01:33 | DEBUG | Métricas actualizadas (29 registros total)
+2026-06-23 06:01:33 | INFO | [96m  ℹ️  Modelo no superó umbral (52.00%). Continuando entrenamiento.[0m
+2026-06-23 06:01:33 | INFO | [93m  ⚠️  Contador de estancamiento: 2/5[0m
+2026-06-23 06:01:33 | INFO | [90m---------------------------------------------------------------------[0m
+2026-06-23 06:01:33 | DEBUG | Temperatura GPU: [92m67°C[0m ✓
+2026-06-23 06:01:33 | INFO | [96m--- Iteración 67 | MCTS: 100 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 06:10:39 | INFO | [92m  ✓ Auto-juego:[0m 3464 estados | Búfer: 33883/100000 | Empates: 0.0% | Longitud media: 34.6
+2026-06-23 06:10:54 | INFO | [92m  ✓ Entrenamiento:[0m loss=1.6069 (value=0.2035, policy=1.1286) | Val.Acc=94.0% | Entropía=1.127
+2026-06-23 06:10:54 | DEBUG | Temperatura GPU: [93m76°C[0m ✓
+2026-06-23 06:10:54 | INFO | [96m--- Iteración 68 | MCTS: 100 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 06:20:17 | INFO | [92m  ✓ Auto-juego:[0m 3516 estados | Búfer: 37399/100000 | Empates: 2.0% | Longitud media: 35.2
+2026-06-23 06:20:35 | INFO | [92m  ✓ Entrenamiento:[0m loss=1.5954 (value=0.1965, policy=1.1242) | Val.Acc=94.0% | Entropía=1.123
+2026-06-23 06:20:35 | INFO | [95m  ⚙️  Torneo de evaluación (40 partidas)...[0m
+2026-06-23 06:24:21 | INFO | [92m  ✓ Tasa de victorias vs mejor:[0m [93m50.0%[0m | Empates eval: 0.0%
+2026-06-23 06:24:21 | DEBUG | Métricas actualizadas (30 registros total)
+2026-06-23 06:24:21 | INFO | [96m  ℹ️  Modelo no superó umbral (52.00%). Continuando entrenamiento.[0m
+2026-06-23 06:24:21 | INFO | [93m  ⚠️  Contador de estancamiento: 3/5[0m
+2026-06-23 06:24:21 | INFO | [90m---------------------------------------------------------------------[0m
+2026-06-23 06:24:21 | DEBUG | Temperatura GPU: [92m66°C[0m ✓
+2026-06-23 06:24:21 | INFO | [96m--- Iteración 69 | MCTS: 100 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 06:33:16 | INFO | [92m  ✓ Auto-juego:[0m 3407 estados | Búfer: 40806/100000 | Empates: 2.0% | Longitud media: 34.1
+2026-06-23 06:33:35 | INFO | [92m  ✓ Entrenamiento:[0m loss=1.6129 (value=0.2063, policy=1.1328) | Val.Acc=93.8% | Entropía=1.132
+2026-06-23 06:33:35 | DEBUG | Temperatura GPU: [93m76°C[0m ✓
+2026-06-23 06:33:35 | INFO | [96m--- Iteración 70 | MCTS: 100 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 06:42:32 | INFO | [92m  ✓ Auto-juego:[0m 3386 estados | Búfer: 44192/100000 | Empates: 0.0% | Longitud media: 33.9
+2026-06-23 06:42:52 | INFO | [92m  ✓ Entrenamiento:[0m loss=1.6234 (value=0.2141, policy=1.1340) | Val.Acc=93.8% | Entropía=1.132
+2026-06-23 06:42:52 | INFO | [95m  ⚙️  Torneo de evaluación (40 partidas)...[0m
+2026-06-23 06:46:38 | INFO | [92m  ✓ Tasa de victorias vs mejor:[0m [93m50.0%[0m | Empates eval: 0.0%
+2026-06-23 06:46:38 | DEBUG | Métricas actualizadas (31 registros total)
+2026-06-23 06:46:38 | INFO | [96m  ℹ️  Modelo no superó umbral (52.00%). Continuando entrenamiento.[0m
+2026-06-23 06:46:38 | INFO | [93m  ⚠️  Contador de estancamiento: 4/5[0m
+2026-06-23 06:46:38 | INFO | [90m---------------------------------------------------------------------[0m
+2026-06-23 06:46:38 | DEBUG | Temperatura GPU: [92m67°C[0m ✓
+2026-06-23 06:46:38 | INFO | [96m--- Iteración 71 | MCTS: 100 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 06:55:34 | INFO | [92m  ✓ Auto-juego:[0m 3341 estados | Búfer: 47533/100000 | Empates: 1.0% | Longitud media: 33.4
+2026-06-23 06:55:55 | INFO | [92m  ✓ Entrenamiento:[0m loss=1.6172 (value=0.2078, policy=1.1334) | Val.Acc=93.8% | Entropía=1.132
+2026-06-23 06:55:55 | DEBUG | Temperatura GPU: [93m77°C[0m ✓
+2026-06-23 06:55:55 | INFO | [96m--- Iteración 72 | MCTS: 100 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 07:04:35 | INFO | [92m  ✓ Auto-juego:[0m 3291 estados | Búfer: 50824/100000 | Empates: 2.0% | Longitud media: 32.9
+2026-06-23 07:04:58 | INFO | [92m  ✓ Entrenamiento:[0m loss=1.6179 (value=0.2111, policy=1.1343) | Val.Acc=93.7% | Entropía=1.133
+2026-06-23 07:04:58 | INFO | [95m  ⚙️  Torneo de evaluación (40 partidas)...[0m
+2026-06-23 07:08:49 | INFO | [92m  ✓ Tasa de victorias vs mejor:[0m [93m0.0%[0m | Empates eval: 0.0%
+2026-06-23 07:08:49 | DEBUG | Métricas actualizadas (32 registros total)
+2026-06-23 07:08:49 | INFO | [96m  ℹ️  Modelo no superó umbral (52.00%). Continuando entrenamiento.[0m
+2026-06-23 07:08:49 | INFO | [93m  ⚠️  Contador de estancamiento: 5/5[0m
+2026-06-23 07:08:49 | WARNING | [91m[1m======================================================================[0m
+2026-06-23 07:08:49 | WARNING | [91m[1m🚨 ESTANCAMIENTO DETECTADO - Aplicando ajustes dinámicos[0m
+2026-06-23 07:08:49 | WARNING | [91m[1m======================================================================[0m
+2026-06-23 07:08:49 | WARNING | [93m  Optimizer state (Adam momentum) reseteado.[0m
+2026-06-23 07:08:49 | WARNING | [93mCambios aplicados:[0m
+2026-06-23 07:08:49 | WARNING | [93m  MCTS: 100 → [92m125[0m
+2026-06-23 07:08:49 | WARNING | [93m  Umbral: 0.52 → [92m0.52[0m
+2026-06-23 07:08:49 | WARNING | [91m[1m======================================================================[0m
+2026-06-23 07:08:49 | INFO | [90m---------------------------------------------------------------------[0m
+2026-06-23 07:08:49 | DEBUG | Temperatura GPU: [92m67°C[0m ✓
+2026-06-23 07:08:49 | INFO | [96m--- Iteración 73 | MCTS: 125 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 07:20:02 | INFO | [92m  ✓ Auto-juego:[0m 3360 estados | Búfer: 54184/100000 | Empates: 0.0% | Longitud media: 33.6
+2026-06-23 07:20:27 | INFO | [92m  ✓ Entrenamiento:[0m loss=1.6177 (value=0.2132, policy=1.1350) | Val.Acc=93.6% | Entropía=1.134
+2026-06-23 07:20:27 | DEBUG | Temperatura GPU: [93m77°C[0m ✓
+2026-06-23 07:20:27 | INFO | [96m--- Iteración 74 | MCTS: 125 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 07:31:38 | INFO | [92m  ✓ Auto-juego:[0m 3365 estados | Búfer: 57549/100000 | Empates: 2.0% | Longitud media: 33.6
+2026-06-23 07:32:05 | INFO | [92m  ✓ Entrenamiento:[0m loss=1.6272 (value=0.2166, policy=1.1409) | Val.Acc=93.5% | Entropía=1.140
+2026-06-23 07:32:05 | INFO | [95m  ⚙️  Torneo de evaluación (40 partidas)...[0m
+2026-06-23 07:36:08 | INFO | [92m  ✓ Tasa de victorias vs mejor:[0m [93m0.0%[0m | Empates eval: 0.0%
+2026-06-23 07:36:08 | DEBUG | Métricas actualizadas (33 registros total)
+2026-06-23 07:36:08 | INFO | [96m  ℹ️  Modelo no superó umbral (52.00%). Continuando entrenamiento.[0m
+2026-06-23 07:36:08 | INFO | [93m  ⚠️  Contador de estancamiento: 1/5[0m
+2026-06-23 07:36:08 | INFO | [90m---------------------------------------------------------------------[0m
+2026-06-23 07:36:08 | DEBUG | Temperatura GPU: [92m67°C[0m ✓
+2026-06-23 07:36:08 | INFO | [96m--- Iteración 75 | MCTS: 125 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 07:46:57 | INFO | [92m  ✓ Auto-juego:[0m 3273 estados | Búfer: 60822/100000 | Empates: 0.0% | Longitud media: 32.7
+2026-06-23 07:47:25 | INFO | [92m  ✓ Entrenamiento:[0m loss=1.6327 (value=0.2199, policy=1.1436) | Val.Acc=93.4% | Entropía=1.142
+2026-06-23 07:47:25 | DEBUG | Temperatura GPU: [93m78°C[0m ✓
+2026-06-23 07:47:25 | INFO | [96m--- Iteración 76 | MCTS: 125 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 07:58:45 | INFO | [92m  ✓ Auto-juego:[0m 3452 estados | Búfer: 64274/100000 | Empates: 1.0% | Longitud media: 34.5
+2026-06-23 07:59:14 | INFO | [92m  ✓ Entrenamiento:[0m loss=1.6400 (value=0.2232, policy=1.1465) | Val.Acc=93.3% | Entropía=1.145
+2026-06-23 07:59:14 | INFO | [95m  ⚙️  Torneo de evaluación (40 partidas)...[0m
+2026-06-23 08:03:32 | INFO | [96m  ✓ Win rate vs aleatorio: 0.0%[0m
+2026-06-23 08:03:32 | INFO | [92m  ✓ Tasa de victorias vs mejor:[0m [93m0.0%[0m | Empates eval: 0.0%
+2026-06-23 08:03:32 | DEBUG | Métricas actualizadas (34 registros total)
+2026-06-23 08:03:32 | INFO | [96m  ℹ️  Modelo no superó umbral (52.00%). Continuando entrenamiento.[0m
+2026-06-23 08:03:32 | INFO | [93m  ⚠️  Contador de estancamiento: 2/5[0m
+2026-06-23 08:03:32 | INFO | [90m---------------------------------------------------------------------[0m
+2026-06-23 08:03:32 | DEBUG | Temperatura GPU: [92m68°C[0m ✓
+2026-06-23 08:03:32 | INFO | [96m--- Iteración 77 | MCTS: 125 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 08:14:39 | INFO | [92m  ✓ Auto-juego:[0m 3356 estados | Búfer: 67630/100000 | Empates: 4.0% | Longitud media: 33.6
+2026-06-23 08:15:10 | INFO | [92m  ✓ Entrenamiento:[0m loss=1.6432 (value=0.2240, policy=1.1491) | Val.Acc=93.2% | Entropía=1.148
+2026-06-23 08:15:10 | DEBUG | Temperatura GPU: [93m78°C[0m ✓
+2026-06-23 08:15:10 | INFO | [96m--- Iteración 78 | MCTS: 125 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 08:26:28 | INFO | [92m  ✓ Auto-juego:[0m 3416 estados | Búfer: 71046/100000 | Empates: 3.0% | Longitud media: 34.2
+2026-06-23 08:27:01 | INFO | [92m  ✓ Entrenamiento:[0m loss=1.6406 (value=0.2242, policy=1.1468) | Val.Acc=93.3% | Entropía=1.145
+2026-06-23 08:27:01 | INFO | [95m  ⚙️  Torneo de evaluación (40 partidas)...[0m
+2026-06-23 08:31:05 | INFO | [92m  ✓ Tasa de victorias vs mejor:[0m [93m50.0%[0m | Empates eval: 0.0%
+2026-06-23 08:31:05 | DEBUG | Métricas actualizadas (35 registros total)
+2026-06-23 08:31:05 | INFO | [96m  ℹ️  Modelo no superó umbral (52.00%). Continuando entrenamiento.[0m
+2026-06-23 08:31:05 | INFO | [93m  ⚠️  Contador de estancamiento: 3/5[0m
+2026-06-23 08:31:05 | INFO | [90m---------------------------------------------------------------------[0m
+2026-06-23 08:31:05 | DEBUG | Temperatura GPU: [92m67°C[0m ✓
+2026-06-23 08:31:05 | INFO | [96m--- Iteración 79 | MCTS: 125 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 08:42:01 | INFO | [92m  ✓ Auto-juego:[0m 3314 estados | Búfer: 74360/100000 | Empates: 2.0% | Longitud media: 33.1
+2026-06-23 08:42:35 | INFO | [92m  ✓ Entrenamiento:[0m loss=1.6463 (value=0.2254, policy=1.1512) | Val.Acc=93.3% | Entropía=1.150
+2026-06-23 08:42:35 | DEBUG | Temperatura GPU: [93m79°C[0m ✓
+2026-06-23 08:42:35 | INFO | [96m--- Iteración 80 | MCTS: 125 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 08:54:00 | INFO | [92m  ✓ Auto-juego:[0m 3391 estados | Búfer: 77751/100000 | Empates: 3.0% | Longitud media: 33.9
+2026-06-23 08:54:37 | INFO | [92m  ✓ Entrenamiento:[0m loss=1.6495 (value=0.2264, policy=1.1528) | Val.Acc=93.2% | Entropía=1.152
+2026-06-23 08:54:37 | INFO | [95m  ⚙️  Torneo de evaluación (40 partidas)...[0m
+2026-06-23 08:58:27 | INFO | [92m  ✓ Tasa de victorias vs mejor:[0m [93m0.0%[0m | Empates eval: 0.0%
+2026-06-23 08:58:27 | DEBUG | Métricas actualizadas (36 registros total)
+2026-06-23 08:58:27 | INFO | [96m  ℹ️  Modelo no superó umbral (52.00%). Continuando entrenamiento.[0m
+2026-06-23 08:58:27 | INFO | [93m  ⚠️  Contador de estancamiento: 4/5[0m
+2026-06-23 08:58:27 | INFO | [90m---------------------------------------------------------------------[0m
+2026-06-23 08:58:27 | DEBUG | Temperatura GPU: [92m68°C[0m ✓
+2026-06-23 08:58:27 | INFO | [96m--- Iteración 81 | MCTS: 125 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 09:09:34 | INFO | [92m  ✓ Auto-juego:[0m 3385 estados | Búfer: 81136/100000 | Empates: 2.0% | Longitud media: 33.9
+2026-06-23 09:10:12 | INFO | [92m  ✓ Entrenamiento:[0m loss=1.6485 (value=0.2266, policy=1.1522) | Val.Acc=93.2% | Entropía=1.151
+2026-06-23 09:10:12 | DEBUG | Temperatura GPU: [93m79°C[0m ✓
+2026-06-23 09:10:12 | INFO | [96m--- Iteración 82 | MCTS: 125 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 09:21:49 | INFO | [92m  ✓ Auto-juego:[0m 3484 estados | Búfer: 84620/100000 | Empates: 1.0% | Longitud media: 34.8
+2026-06-23 09:22:29 | INFO | [92m  ✓ Entrenamiento:[0m loss=1.6491 (value=0.2289, policy=1.1524) | Val.Acc=93.2% | Entropía=1.152
+2026-06-23 09:22:29 | INFO | [95m  ⚙️  Torneo de evaluación (40 partidas)...[0m
+2026-06-23 09:26:39 | INFO | [92m  ✓ Tasa de victorias vs mejor:[0m [93m0.0%[0m | Empates eval: 0.0%
+2026-06-23 09:26:39 | DEBUG | Métricas actualizadas (37 registros total)
+2026-06-23 09:26:39 | INFO | [96m  ℹ️  Modelo no superó umbral (52.00%). Continuando entrenamiento.[0m
+2026-06-23 09:26:39 | INFO | [93m  ⚠️  Contador de estancamiento: 5/5[0m
+2026-06-23 09:26:39 | WARNING | [91m[1m======================================================================[0m
+2026-06-23 09:26:39 | WARNING | [91m[1m🚨 ESTANCAMIENTO DETECTADO - Aplicando ajustes dinámicos[0m
+2026-06-23 09:26:39 | WARNING | [91m[1m======================================================================[0m
+2026-06-23 09:26:39 | WARNING | [93m  Optimizer state (Adam momentum) reseteado.[0m
+2026-06-23 09:26:39 | WARNING | [93mCambios aplicados:[0m
+2026-06-23 09:26:39 | WARNING | [93m  MCTS: 125 → [92m156[0m
+2026-06-23 09:26:39 | WARNING | [93m  Umbral: 0.52 → [92m0.52[0m
+2026-06-23 09:26:39 | WARNING | [91m[1m======================================================================[0m
+2026-06-23 09:26:39 | INFO | [90m---------------------------------------------------------------------[0m
+2026-06-23 09:26:39 | DEBUG | Temperatura GPU: [92m68°C[0m ✓
+2026-06-23 09:26:39 | INFO | [96m--- Iteración 83 | MCTS: 156 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 09:40:30 | INFO | [92m  ✓ Auto-juego:[0m 3354 estados | Búfer: 87974/100000 | Empates: 2.0% | Longitud media: 33.5
+2026-06-23 09:41:11 | INFO | [92m  ✓ Entrenamiento:[0m loss=1.6486 (value=0.2281, policy=1.1545) | Val.Acc=93.1% | Entropía=1.153
+2026-06-23 09:41:11 | DEBUG | Temperatura GPU: [91m80°C[0m ✓
+2026-06-23 09:41:11 | INFO | [96m--- Iteración 84 | MCTS: 156 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 09:55:19 | INFO | [92m  ✓ Auto-juego:[0m 3396 estados | Búfer: 91370/100000 | Empates: 0.0% | Longitud media: 34.0
+2026-06-23 09:56:01 | INFO | [92m  ✓ Entrenamiento:[0m loss=1.6661 (value=0.2368, policy=1.1611) | Val.Acc=92.9% | Entropía=1.160
+2026-06-23 09:56:01 | INFO | [95m  ⚙️  Torneo de evaluación (40 partidas)...[0m
+2026-06-23 09:59:46 | INFO | [92m  ✓ Tasa de victorias vs mejor:[0m [93m0.0%[0m | Empates eval: 0.0%
+2026-06-23 09:59:46 | DEBUG | Métricas actualizadas (38 registros total)
+2026-06-23 09:59:46 | INFO | [96m  ℹ️  Modelo no superó umbral (52.00%). Continuando entrenamiento.[0m
+2026-06-23 09:59:46 | INFO | [93m  ⚠️  Contador de estancamiento: 1/5[0m
+2026-06-23 09:59:46 | INFO | [90m---------------------------------------------------------------------[0m
+2026-06-23 09:59:46 | DEBUG | Temperatura GPU: [92m67°C[0m ✓
+2026-06-23 09:59:46 | INFO | [96m--- Iteración 85 | MCTS: 156 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 10:13:15 | INFO | [91m[1m======================================================================[0m
+2026-06-23 10:13:15 | INFO | [93m⏸️  Entrenamiento detenido manualmente por el usuario[0m
+2026-06-23 10:13:15 | INFO | [91m[1m======================================================================[0m
+2026-06-23 10:13:15 | INFO | [93mGuardando checkpoint final...[0m
+2026-06-23 10:13:15 | INFO | [92m[1m✓ Checkpoint final guardado: checkpoints/best_model.pt[0m
+2026-06-23 10:13:15 | INFO | [92m[1m✓ Métricas finales guardadas: 38 registros en training_metrics.json[0m
+2026-06-23 10:13:15 | INFO | [92m[1m======================================================================[0m
+2026-06-23 10:13:15 | INFO | [92m[1m✓ Auto-entrenamiento finalizado correctamente[0m
+2026-06-23 10:13:15 | INFO | [92m[1m======================================================================[0m
+2026-06-23 12:47:04 | INFO | ======================================================================
+2026-06-23 12:47:04 | INFO | [92m[1m======================================================================[0m
+2026-06-23 12:47:04 | INFO | [92m[1mIniciando Auto-Entrenamiento Inteligente AlphaZero[0m
+2026-06-23 12:47:04 | INFO | [92m[1m======================================================================[0m
+2026-06-23 12:47:04 | INFO | Dispositivo: cuda
+2026-06-23 12:47:04 | INFO | MCTS simulaciones: 100 | Épocas: 3 | LR: 0.001
+2026-06-23 12:47:04 | INFO | dirichlet_alpha: 0.5 | c_puct: 1.5 | Umbral: 0.52
+2026-06-23 12:47:04 | INFO | ======================================================================
+2026-06-23 12:47:05 | INFO | [92m[1m✓ Métricas previas cargadas: 38 registros[0m
+2026-06-23 12:47:05 | INFO | ======================================================================
+2026-06-23 12:47:05 | DEBUG | Temperatura GPU: [92m57°C[0m ✓
+2026-06-23 12:47:05 | INFO | [96m--- Iteración 1 | MCTS: 100 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 12:53:26 | INFO | [92m  ✓ Auto-juego:[0m 1871 estados | Búfer: 1871/100000 | Empates: 2.0% | Longitud media: 18.7
+2026-06-23 12:53:27 | INFO | [92m  ✓ Entrenamiento:[0m loss=3.0462 (value=0.6876, policy=1.8776) | Val.Acc=78.6% | Entropía=1.672
+2026-06-23 12:53:27 | INFO |   ⏱ Tiempo iteración: 6.4 min
+2026-06-23 12:53:27 | INFO | [90m---------------------------------------------------------------------[0m
+2026-06-23 12:53:27 | DEBUG | Temperatura GPU: [92m72°C[0m ✓
+2026-06-23 12:53:27 | INFO | [96m--- Iteración 2 | MCTS: 100 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 13:00:05 | INFO | [92m  ✓ Auto-juego:[0m 1875 estados | Búfer: 3746/100000 | Empates: 4.0% | Longitud media: 18.8
+2026-06-23 13:00:07 | INFO | [92m  ✓ Entrenamiento:[0m loss=2.7052 (value=0.4811, policy=1.7430) | Val.Acc=84.2% | Entropía=1.732
+2026-06-23 13:00:07 | INFO | [95m  ⚙️  Torneo de evaluación (40 partidas)...[0m
+2026-06-23 13:04:02 | INFO | [92m  ✓ Tasa de victorias vs mejor:[0m [93m50.0%[0m | Empates eval: 0.0%
+2026-06-23 13:04:02 | DEBUG | Métricas actualizadas (39 registros total)
+2026-06-23 13:04:02 | INFO | [96m  ℹ️  Modelo no superó umbral (52.00%). Continuando entrenamiento.[0m
+2026-06-23 13:04:02 | INFO | [93m  ⚠️  Contador de estancamiento: 1/5[0m
+2026-06-23 13:04:02 | INFO |   ⏱ Tiempo iteración: 10.6 min
+2026-06-23 13:04:02 | INFO | [90m---------------------------------------------------------------------[0m
+2026-06-23 13:04:02 | DEBUG | Temperatura GPU: [92m67°C[0m ✓
+2026-06-23 13:04:02 | INFO | [96m--- Iteración 3 | MCTS: 100 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 13:04:47 | INFO | [91m[1m======================================================================[0m
+2026-06-23 13:04:47 | INFO | [93m⏸️  Entrenamiento detenido manualmente por el usuario[0m
+2026-06-23 13:04:47 | INFO | [91m[1m======================================================================[0m
+2026-06-23 13:04:47 | INFO | [93mGuardando checkpoint final...[0m
+2026-06-23 13:04:47 | INFO | [92m[1m✓ Checkpoint final guardado: checkpoints/best_model.pt[0m
+2026-06-23 13:04:47 | INFO | [92m[1m✓ Métricas finales guardadas: 39 registros en training_metrics.json[0m
+2026-06-23 13:04:47 | INFO | [92m[1m======================================================================[0m
+2026-06-23 13:04:47 | INFO | [92m[1m✓ Auto-entrenamiento finalizado correctamente[0m
+2026-06-23 13:04:47 | INFO | [92m[1m======================================================================[0m
+2026-06-23 13:11:20 | INFO | ======================================================================
+2026-06-23 13:11:20 | INFO | [92m[1m======================================================================[0m
+2026-06-23 13:11:20 | INFO | [92m[1mIniciando Auto-Entrenamiento Inteligente AlphaZero[0m
+2026-06-23 13:11:20 | INFO | [92m[1m======================================================================[0m
+2026-06-23 13:11:20 | INFO | Dispositivo: cuda
+2026-06-23 13:11:20 | INFO | MCTS simulaciones: 100 | Épocas: 3 | LR: 0.001
+2026-06-23 13:11:20 | INFO | dirichlet_alpha: 0.5 | c_puct: 1.5 | Umbral: 0.52
+2026-06-23 13:11:20 | INFO | ======================================================================
+2026-06-23 13:11:21 | INFO | [92m[1m✓ Checkpoint cargado exitosamente:[0m
+2026-06-23 13:11:21 | INFO |   - Iteración: 3
+2026-06-23 13:11:21 | INFO |   - Partidas jugadas: 200
+2026-06-23 13:11:21 | INFO |   - Ruta: checkpoints/best_model.pt
+2026-06-23 13:11:21 | INFO | [92m[1m✓ Métricas previas cargadas: 39 registros[0m
+2026-06-23 13:11:21 | INFO | ======================================================================
+2026-06-23 13:11:21 | DEBUG | Temperatura GPU: [92m56°C[0m ✓
+2026-06-23 13:11:21 | INFO | [96m--- Iteración 4 | MCTS: 100 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 13:44:13 | INFO | [91m[1m======================================================================[0m
+2026-06-23 13:44:13 | INFO | [93m⏸️  Entrenamiento detenido manualmente por el usuario[0m
+2026-06-23 13:44:13 | INFO | [91m[1m======================================================================[0m
+2026-06-23 13:44:13 | INFO | [93mGuardando checkpoint final...[0m
+2026-06-23 13:44:13 | INFO | [92m[1m✓ Checkpoint final guardado: checkpoints/best_model.pt[0m
+2026-06-23 13:44:13 | INFO | [92m[1m✓ Métricas finales guardadas: 39 registros en training_metrics.json[0m
+2026-06-23 13:44:13 | INFO | [92m[1m======================================================================[0m
+2026-06-23 13:44:13 | INFO | [92m[1m✓ Auto-entrenamiento finalizado correctamente[0m
+2026-06-23 13:44:13 | INFO | [92m[1m======================================================================[0m
+2026-06-23 13:47:45 | INFO | ======================================================================
+2026-06-23 13:47:45 | INFO | [92m[1m======================================================================[0m
+2026-06-23 13:47:45 | INFO | [92m[1mIniciando Auto-Entrenamiento Inteligente AlphaZero[0m
+2026-06-23 13:47:45 | INFO | [92m[1m======================================================================[0m
+2026-06-23 13:47:45 | INFO | Dispositivo: cuda
+2026-06-23 13:47:45 | INFO | MCTS simulaciones: 100 | Épocas: 3 | LR: 0.001
+2026-06-23 13:47:45 | INFO | dirichlet_alpha: 0.5 | c_puct: 1.5 | Umbral: 0.52
+2026-06-23 13:47:45 | INFO | ======================================================================
+2026-06-23 13:47:46 | INFO | [92m[1m✓ Checkpoint cargado exitosamente:[0m
+2026-06-23 13:47:46 | INFO |   - Iteración: 4
+2026-06-23 13:47:46 | INFO |   - Partidas jugadas: 200
+2026-06-23 13:47:46 | INFO |   - Ruta: checkpoints/best_model.pt
+2026-06-23 13:47:46 | INFO | [92m[1m✓ Métricas previas cargadas: 39 registros[0m
+2026-06-23 13:47:46 | INFO | ======================================================================
+2026-06-23 13:47:46 | DEBUG | Temperatura GPU: [92m56°C[0m ✓
+2026-06-23 13:47:46 | INFO | [96m--- Iteración 5 | MCTS: 100 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 13:52:00 | INFO | [92m  ✓ Auto-juego:[0m 1726 estados | Búfer: 1726/100000 | Empates: 1.0% | Longitud media: 17.3
+2026-06-23 13:52:01 | INFO | [92m  ✓ Entrenamiento:[0m loss=3.3475 (value=0.9249, policy=1.9418) | Val.Acc=70.6% | Entropía=1.685
+2026-06-23 13:52:01 | INFO |   ⏱ Tiempo iteración: 4.3 min
+2026-06-23 13:52:01 | INFO | [90m---------------------------------------------------------------------[0m
+2026-06-23 13:52:01 | DEBUG | Temperatura GPU: [92m61°C[0m ✓
+2026-06-23 13:52:01 | INFO | [96m--- Iteración 6 | MCTS: 100 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 13:54:42 | INFO | [91m[1m======================================================================[0m
+2026-06-23 13:54:42 | INFO | [93m⏸️  Entrenamiento detenido manualmente por el usuario[0m
+2026-06-23 13:54:42 | INFO | [91m[1m======================================================================[0m
+2026-06-23 13:54:42 | INFO | [93mGuardando checkpoint final...[0m
+2026-06-23 13:54:42 | INFO | [92m[1m✓ Checkpoint final guardado: checkpoints/best_model.pt[0m
+2026-06-23 13:54:42 | INFO | [92m[1m✓ Métricas finales guardadas: 39 registros en training_metrics.json[0m
+2026-06-23 13:54:42 | INFO | [92m[1m======================================================================[0m
+2026-06-23 13:54:42 | INFO | [92m[1m✓ Auto-entrenamiento finalizado correctamente[0m
+2026-06-23 13:54:42 | INFO | [92m[1m======================================================================[0m
+2026-06-23 14:03:55 | INFO | ======================================================================
+2026-06-23 14:03:55 | INFO | [92m[1m======================================================================[0m
+2026-06-23 14:03:55 | INFO | [92m[1mIniciando Auto-Entrenamiento Inteligente AlphaZero[0m
+2026-06-23 14:03:55 | INFO | [92m[1m======================================================================[0m
+2026-06-23 14:03:55 | INFO | Dispositivo: cuda
+2026-06-23 14:03:55 | INFO | MCTS simulaciones: 100 | Épocas: 3 | LR: 0.001
+2026-06-23 14:03:55 | INFO | dirichlet_alpha: 0.5 | c_puct: 1.5 | Umbral: 0.52
+2026-06-23 14:03:55 | INFO | ======================================================================
+2026-06-23 14:03:56 | INFO | [92m[1m✓ Checkpoint cargado exitosamente:[0m
+2026-06-23 14:03:56 | INFO |   - Iteración: 6
+2026-06-23 14:03:56 | INFO |   - Partidas jugadas: 300
+2026-06-23 14:03:56 | INFO |   - Ruta: checkpoints/best_model.pt
+2026-06-23 14:03:56 | INFO | [92m[1m✓ Métricas previas cargadas: 39 registros[0m
+2026-06-23 14:03:56 | INFO | ======================================================================
+2026-06-23 14:03:56 | DEBUG | Temperatura GPU: [92m42°C[0m ✓
+2026-06-23 14:03:56 | INFO | [96m--- Iteración 7 | MCTS: 100 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 14:08:12 | INFO | [92m  ✓ Auto-juego:[0m 1760 estados | Búfer: 1760/100000 | Empates: 1.0% | Longitud media: 17.6
+2026-06-23 14:08:16 | INFO | [92m  ✓ Entrenamiento:[0m loss=3.5265 (value=1.1387, policy=1.9070) | Val.Acc=60.4% | Entropía=1.642
+2026-06-23 14:08:16 | INFO | [95m  ⚙️  Torneo de evaluación (40 partidas)...[0m
+2026-06-23 14:11:58 | INFO | [92m  ✓ Tasa de victorias vs mejor:[0m [92m100.0%[0m | Empates eval: 0.0%
+2026-06-23 14:11:58 | DEBUG | Métricas actualizadas (40 registros total)
+2026-06-23 14:11:58 | INFO | [92m[1m  🎉 ¡Nuevo mejor modelo encontrado! (100.0% > 52.00%)[0m
+2026-06-23 14:11:58 | INFO | [92m[1m  ✓ Checkpoint guardado: checkpoints/best_model.pt[0m
+2026-06-23 14:11:58 | INFO |   ↩ Parámetros restaurados: MCTS=100, juegos/iter=100
+2026-06-23 14:11:58 | INFO |   ⏱ Tiempo iteración: 8.0 min
+2026-06-23 14:11:58 | INFO | [90m---------------------------------------------------------------------[0m
+2026-06-23 14:11:58 | DEBUG | Temperatura GPU: [92m63°C[0m ✓
+2026-06-23 14:11:58 | INFO | [96m--- Iteración 8 | MCTS: 100 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 14:17:36 | INFO | [92m  ✓ Auto-juego:[0m 2073 estados | Búfer: 3833/100000 | Empates: 0.0% | Longitud media: 20.7
+2026-06-23 14:17:44 | INFO | [92m  ✓ Entrenamiento:[0m loss=2.9089 (value=0.6354, policy=1.7924) | Val.Acc=78.7% | Entropía=1.775
+2026-06-23 14:17:44 | INFO |   ⏱ Tiempo iteración: 5.8 min
+2026-06-23 14:17:44 | INFO | [90m---------------------------------------------------------------------[0m
+2026-06-23 14:17:44 | DEBUG | Temperatura GPU: [92m64°C[0m ✓
+2026-06-23 14:17:44 | INFO | [96m--- Iteración 9 | MCTS: 100 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 14:22:11 | INFO | [92m  ✓ Auto-juego:[0m 1632 estados | Búfer: 5465/100000 | Empates: 1.0% | Longitud media: 16.3
+2026-06-23 14:22:13 | INFO | [92m  ✓ Entrenamiento:[0m loss=2.7491 (value=0.4947, policy=1.7771) | Val.Acc=84.7% | Entropía=1.773
+2026-06-23 14:22:13 | INFO | [95m  ⚙️  Torneo de evaluación (40 partidas)...[0m
+2026-06-23 14:26:38 | INFO | [92m  ✓ Tasa de victorias vs mejor:[0m [93m0.0%[0m | Empates eval: 50.0%
+2026-06-23 14:26:38 | DEBUG | Métricas actualizadas (41 registros total)
+2026-06-23 14:26:38 | INFO | [96m  ℹ️  Modelo no superó umbral (52.00%). Continuando entrenamiento.[0m
+2026-06-23 14:26:38 | INFO | [93m  ⚠️  Contador de estancamiento: 1/5[0m
+2026-06-23 14:26:38 | INFO |   ⏱ Tiempo iteración: 8.9 min
+2026-06-23 14:26:38 | INFO | [90m---------------------------------------------------------------------[0m
+2026-06-23 14:26:38 | DEBUG | Temperatura GPU: [93m76°C[0m ✓
+2026-06-23 14:26:38 | INFO | [96m--- Iteración 10 | MCTS: 100 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 14:31:41 | INFO | [92m  ✓ Auto-juego:[0m 1620 estados | Búfer: 7085/100000 | Empates: 0.0% | Longitud media: 16.2
+2026-06-23 14:31:44 | INFO | [92m  ✓ Entrenamiento:[0m loss=2.6563 (value=0.4472, policy=1.7374) | Val.Acc=86.1% | Entropía=1.739
+2026-06-23 14:31:44 | INFO |   ⏱ Tiempo iteración: 5.1 min
+2026-06-23 14:31:44 | INFO | [90m---------------------------------------------------------------------[0m
+2026-06-23 14:31:44 | DEBUG | Temperatura GPU: [93m75°C[0m ✓
+2026-06-23 14:31:44 | INFO | [96m--- Iteración 11 | MCTS: 100 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 14:36:40 | INFO | [92m  ✓ Auto-juego:[0m 1744 estados | Búfer: 8829/100000 | Empates: 1.0% | Longitud media: 17.4
+2026-06-23 14:36:44 | INFO | [92m  ✓ Entrenamiento:[0m loss=2.5664 (value=0.4172, policy=1.6848) | Val.Acc=87.1% | Entropía=1.683
+2026-06-23 14:36:44 | INFO | [95m  ⚙️  Torneo de evaluación (40 partidas)...[0m
+2026-06-23 14:44:11 | INFO | [96m  ✓ Win rate vs aleatorio: 100.0%[0m
+2026-06-23 14:44:11 | INFO | [92m  ✓ Tasa de victorias vs mejor:[0m [92m100.0%[0m | Empates eval: 0.0%
+2026-06-23 14:44:11 | DEBUG | Métricas actualizadas (42 registros total)
+2026-06-23 14:44:11 | INFO | [92m[1m  🎉 ¡Nuevo mejor modelo encontrado! (100.0% > 52.00%)[0m
+2026-06-23 14:44:11 | INFO | [92m[1m  ✓ Checkpoint guardado: checkpoints/best_model.pt[0m
+2026-06-23 14:44:11 | INFO |   ↩ Parámetros restaurados: MCTS=100, juegos/iter=100
+2026-06-23 14:44:11 | INFO |   ⏱ Tiempo iteración: 12.4 min
+2026-06-23 14:44:11 | INFO | [90m---------------------------------------------------------------------[0m
+2026-06-23 14:44:11 | DEBUG | Temperatura GPU: [91m84°C[0m ✓
+2026-06-23 14:44:11 | INFO | [96m--- Iteración 12 | MCTS: 100 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 14:50:11 | INFO | [92m  ✓ Auto-juego:[0m 1906 estados | Búfer: 10735/100000 | Empates: 1.0% | Longitud media: 19.1
+2026-06-23 14:50:16 | INFO | [92m  ✓ Entrenamiento:[0m loss=2.4971 (value=0.4029, policy=1.6394) | Val.Acc=87.2% | Entropía=1.636
+2026-06-23 14:50:16 | INFO |   ⏱ Tiempo iteración: 6.1 min
+2026-06-23 14:50:16 | INFO | [90m---------------------------------------------------------------------[0m
+2026-06-23 14:50:16 | DEBUG | Temperatura GPU: [92m73°C[0m ✓
+2026-06-23 14:50:16 | INFO | [96m--- Iteración 13 | MCTS: 100 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 14:56:19 | INFO | [92m  ✓ Auto-juego:[0m 2186 estados | Búfer: 12921/100000 | Empates: 1.0% | Longitud media: 21.9
+2026-06-23 14:56:25 | INFO | [92m  ✓ Entrenamiento:[0m loss=2.4302 (value=0.4008, policy=1.5861) | Val.Acc=87.3% | Entropía=1.581
+2026-06-23 14:56:25 | INFO | [95m  ⚙️  Torneo de evaluación (40 partidas)...[0m
+2026-06-23 15:01:40 | INFO | [92m  ✓ Tasa de victorias vs mejor:[0m [93m0.0%[0m | Empates eval: 0.0%
+2026-06-23 15:01:40 | DEBUG | Métricas actualizadas (43 registros total)
+2026-06-23 15:01:40 | INFO | [96m  ℹ️  Modelo no superó umbral (52.00%). Continuando entrenamiento.[0m
+2026-06-23 15:01:40 | INFO | [93m  ⚠️  Contador de estancamiento: 1/5[0m
+2026-06-23 15:01:40 | INFO |   ⏱ Tiempo iteración: 11.4 min
+2026-06-23 15:01:40 | INFO | [90m---------------------------------------------------------------------[0m
+2026-06-23 15:01:40 | DEBUG | Temperatura GPU: [93m75°C[0m ✓
+2026-06-23 15:01:40 | INFO | [96m--- Iteración 14 | MCTS: 100 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 15:07:45 | INFO | [92m  ✓ Auto-juego:[0m 2021 estados | Búfer: 14942/100000 | Empates: 1.0% | Longitud media: 20.2
+2026-06-23 15:07:52 | INFO | [92m  ✓ Entrenamiento:[0m loss=2.3777 (value=0.3987, policy=1.5495) | Val.Acc=87.1% | Entropía=1.545
+2026-06-23 15:07:52 | INFO |   ⏱ Tiempo iteración: 6.2 min
+2026-06-23 15:07:52 | INFO | [90m---------------------------------------------------------------------[0m
+2026-06-23 15:07:52 | DEBUG | Temperatura GPU: [92m74°C[0m ✓
+2026-06-23 15:07:52 | INFO | [96m--- Iteración 15 | MCTS: 100 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 15:14:14 | INFO | [92m  ✓ Auto-juego:[0m 2091 estados | Búfer: 17033/100000 | Empates: 4.0% | Longitud media: 20.9
+2026-06-23 15:14:22 | INFO | [92m  ✓ Entrenamiento:[0m loss=2.3202 (value=0.3948, policy=1.5106) | Val.Acc=86.9% | Entropía=1.506
+2026-06-23 15:14:22 | INFO | [95m  ⚙️  Torneo de evaluación (40 partidas)...[0m
+2026-06-23 15:19:09 | INFO | [92m  ✓ Tasa de victorias vs mejor:[0m [93m50.0%[0m | Empates eval: 0.0%
+2026-06-23 15:19:09 | DEBUG | Métricas actualizadas (44 registros total)
+2026-06-23 15:19:09 | INFO | [96m  ℹ️  Modelo no superó umbral (52.00%). Continuando entrenamiento.[0m
+2026-06-23 15:19:09 | INFO | [93m  ⚠️  Contador de estancamiento: 2/5[0m
+2026-06-23 15:19:09 | INFO |   ⏱ Tiempo iteración: 11.3 min
+2026-06-23 15:19:09 | INFO | [90m---------------------------------------------------------------------[0m
+2026-06-23 15:19:09 | DEBUG | Temperatura GPU: [92m74°C[0m ✓
+2026-06-23 15:19:09 | INFO | [96m--- Iteración 16 | MCTS: 100 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 15:23:54 | INFO | [92m  ✓ Auto-juego:[0m 1810 estados | Búfer: 18843/100000 | Empates: 2.0% | Longitud media: 18.1
+2026-06-23 15:24:03 | INFO | [92m  ✓ Entrenamiento:[0m loss=2.2553 (value=0.3768, policy=1.4807) | Val.Acc=87.4% | Entropía=1.476
+2026-06-23 15:24:03 | INFO |   ⏱ Tiempo iteración: 4.9 min
+2026-06-23 15:24:03 | INFO | [90m---------------------------------------------------------------------[0m
+2026-06-23 15:24:03 | DEBUG | Temperatura GPU: [93m75°C[0m ✓
+2026-06-23 15:24:03 | INFO | [96m--- Iteración 17 | MCTS: 100 | LR: 0.00100 | Umbral: 0.52 ---[0m
+2026-06-23 15:29:42 | INFO | [92m  ✓ Auto-juego:[0m 2143 estados | Búfer: 20986/100000 | Empates: 3.0% | Longitud media: 21.4
+2026-06-23 15:29:51 | INFO | [92m  ✓ Entrenamiento:[0m loss=2.2258 (value=0.3777, policy=1.4670) | Val.Acc=87.2% | Entropía=1.461
+2026-06-23 15:29:51 | INFO | [95m  ⚙️  Torneo de evaluación (40 partidas)...[0m
+2026-06-23 15:33:44 | INFO | [96m  ✓ Win rate vs aleatorio: 100.0%[0m
+2026-06-23 15:33:44 | INFO | [92m  ✓ Tasa de victorias vs mejor:[0m [92m100.0%[0m | Empates eval: 0.0%
+2026-06-23 15:33:44 | DEBUG | Métricas actualizadas (45 registros total)
+2026-06-23 15:33:44 | INFO | [92m[1m  🎉 ¡Nuevo mejor modelo encontrado! (100.0% > 52.00%)[0m
+2026-06-23 15:33:44 | INFO | [92m[1m  ✓ Checkpoint guardado: checkpoints/best_model.pt[0m
+2026-06-23 15:33:44 | INFO |   ↩ Parámetros restaurados: MCTS=100, juegos/iter=100
+2026-06-23 15:33:44 | INFO |   ⏱ Tiempo iteración: 9.7 min
+2026-06-23 15:33:44 | INFO | [90m---------------------------------------------------------------------[0m
+2026-06-23 15:33:44 | DEBUG | Temperatura GPU: [92m71°C[0m ✓
+2026-06-23 15:33:44 | INFO | [96m--- Iteración 18 | MCTS: 100 | LR: 0.00100 | Umbral: 0.52 ---[0m

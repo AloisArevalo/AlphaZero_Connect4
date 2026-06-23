@@ -3,9 +3,10 @@
 Script principal para ejecutar el juego contra la IA.
 
 Uso:
-    python play.py          # Dificultad normal (100 simulaciones)
-    python play.py --easy   # Facil (50 simulaciones)
-    python play.py --hard   # Dificil (200 simulaciones)
+    python play.py                    # Dificultad normal (200 simulaciones)
+    python play.py --difficulty easy  # Fácil (50 simulaciones)
+    python play.py --difficulty hard  # Difícil (400 simulaciones)
+    python play.py --difficulty expert # Experto (800 simulaciones)
 """
 
 import sys
@@ -36,10 +37,10 @@ def main():
     
     # Mapear dificultad a simulaciones MCTS
     difficulty_map = {
-        "easy": 25,
-        "normal": 100,
-        "hard": 200,
-        "expert": 400,
+        "easy": 50,
+        "normal": 200,
+        "hard": 400,
+        "expert": 800,
     }
     
     mcts_sims = difficulty_map[args.difficulty]

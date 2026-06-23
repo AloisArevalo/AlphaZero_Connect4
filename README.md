@@ -328,6 +328,119 @@ config = Config(
 
 ---
 
+## Reutilización del árbol MCTS en el modo de juego
+
+En la interfaz interactiva, la IA no descarta su árbol de búsqueda tras cada turno. En su lugar, **avanza la raíz al subárbol del movimiento jugado**, conservando todo el trabajo de exploración previo.
+
+### Por qué funciona
+
+MCTS construye un árbol donde cada nodo almacena las visitas acumuladas y el valor Q de todas las simulaciones que pasaron por él. Cuando se juega el movimiento `c`, el nodo hijo correspondiente ya fue explorado con una fracción de las simulaciones anteriores:
+
+```
+Turno N — MCTS explora 200 simulaciones desde la raíz:
+    Raíz (200 visitas)
+   /   |   |   \
+  c0  c1  c2   c3   ← IA elige c2 (80 visitas acumuladas)
+       └── c2 tiene ya 80 simulaciones de "pensamiento anticipado"
+
+Turno N+1 — con reutilización:
+    c2 se convierte en la nueva raíz (80 visitas ya hechas)
+    ↳ Las 200 nuevas simulaciones REFINAN en lugar de partir de cero
+```
+
+El árbol solo puede avanzar hacia adelante porque Connect 4 es un juego sin retroceso: una vez que se coloca una ficha, esa rama del árbol es la única relevante. El resto del árbol (columnas no jugadas) se descarta automáticamente.
+
+Si el oponente juega una columna que el MCTS no exploró (nodo inexistente en el árbol), se descarta el árbol y la IA parte de cero en ese turno, sin penalización.
+
+### Efecto práctico
+
+| Turno | Sin reutilización | Con reutilización |
+|-------|-------------------|-------------------|
+| 1 | 200 sims desde cero | 200 sims desde cero |
+| 2 | 200 sims desde cero | ~50 sims ya hechas + 200 nuevas |
+| 3 | 200 sims desde cero | ~60 sims ya hechas + 200 nuevas |
+| … | siempre igual | árbol cada vez más rico |
+
+La calidad de las decisiones mejora a medida que avanza la partida: la IA lleva múltiples turnos de "pensamiento anticipado" acumulado sobre las posiciones que realmente ocurren.
+
+---
+
+## Diagnóstico y correcciones de la v1
+
+Tras 57 iteraciones de entrenamiento, la primera versión mostraba un estancamiento severo: la pérdida total subía de 1.54 a 1.73 (en lugar de bajar) y la tasa de victorias oscilaba entre 0% y 50% sin ninguna mejora. A continuación se detallan las causas raíz identificadas y las correcciones aplicadas.
+
+### Problema 1 — `dirichlet_alpha = 0.03` (incorrecto para Connect4)
+
+**Causa:** El paper de AlphaZero escala `alpha` inversamente proporcional al número de movimientos legales: para Go (361 movimientos) usan 0.03, para Connect4 (7 movimientos) el valor correcto es ~10/7 ≈ 1.43. Con 0.03, la distribución Dirichlet concentra casi toda la masa en 1–2 movimientos, por lo que el ruido de exploración era prácticamente inexistente. El modelo jugaba siempre los mismos movimientos y no aprendía estrategias diversas.
+
+**Corrección:** `dirichlet_alpha`: 0.03 → **0.5** (escala adecuada para 7 columnas).
+
+---
+
+### Problema 2 — `train_epochs = 10` causaba sobreajuste por iteración
+
+**Causa:** Con el búfer lleno (~100k estados) y 10 épocas, el bucle de entrenamiento realizaba ~3 900 actualizaciones de gradiente por iteración, con solo ~700 estados nuevos. El modelo sobreajustaba masivamente la muestra reciente, generalizaba peor y rendía peor en la evaluación que el modelo anterior.
+
+**Corrección:** `train_epochs`: 10 → **3** (previene sobreajuste; cada estado se procesa con mucha menos redundancia).
+
+---
+
+### Problema 3 — Reversión completa del modelo al fallar la evaluación
+
+**Causa:** Cuando el modelo nuevo no superaba el umbral del 55%, se revertía completamente al checkpoint anterior (`network.load_state_dict(best_network.state_dict())`). Esto generaba un bucle oscilatorio: el modelo entrenaba, fallaba la evaluación, era revertido al punto de partida, volvía a entrenar desde la misma posición, y el ciclo se repetía indefinidamente. El log confirmaba win_rate alternando entre 0% y 50% sin progresión.
+
+**Corrección:** Eliminada la reversión. El modelo continúa entrenando desde donde está independientemente del resultado de la evaluación. El checkpoint del "mejor modelo" sigue guardándose cuando se supera el umbral.
+
+---
+
+### Problema 4 — La respuesta al estancamiento agravaba el problema
+
+**Causa:** Al detectar 3 evaluaciones fallidas consecutivas, `auto_train.py` reducía el learning rate un 25%. Con el LR cada vez más pequeño, el modelo perdía capacidad para escapar de mínimos locales. Combinado con la reversión, el LR caía a valores ínfimos mientras el modelo seguía estancado.
+
+**Corrección:** Reemplazado el decaimiento de LR por un **reset del estado del optimizador** (`optimizer.state.clear()`): se borra el momentum acumulado de Adam para que el gradiente fresco guíe el entrenamiento desde cero, sin alterar el LR. El umbral de disparo se aumentó de 3 a 5 fallos consecutivos para ser menos reactivo.
+
+---
+
+### Problema 5 — Exploración insuficiente en MCTS
+
+**Causa:** `mcts_simulations = 50` y `c_puct = 1.0` generaban árboles de búsqueda superficiales con poco equilibrio entre explotación y exploración. Los datos de auto-juego eran de baja calidad (políticas débiles = objetivos de entrenamiento ruidosos).
+
+**Corrección:** `mcts_simulations`: 50 → **100** | `c_puct`: 1.0 → **1.5** | `temperature_moves`: 15 → **20**.
+
+---
+
+### Problema 6 — Umbral de promoción demasiado estricto
+
+**Causa:** Con solo 40 partidas de evaluación, la varianza estadística es alta. Un umbral del 55% excluía modelos genuinamente mejores que simplemente tuvieron mala suerte en el torneo.
+
+**Corrección:** `win_threshold`: 0.55 → **0.52**.
+
+---
+
+### Problema 7 — Dificultad del juego demasiado baja
+
+**Causa:** El modo "normal" usaba solo 100 simulaciones MCTS, equivalente a la búsqueda de evaluación. Con un modelo poco entrenado, la IA resultaba trivialmente derrotable.
+
+**Corrección:** Escalado de dificultades actualizado: easy=50, normal=200, hard=400, expert=800 simulaciones.
+
+---
+
+### Nuevas métricas de entrenamiento
+
+Se añadieron las siguientes métricas al archivo `training_metrics.json` para dotar al proyecto de indicadores académicamente significativos:
+
+| Métrica | Qué mide |
+|---------|----------|
+| `policy_loss` | Entropía cruzada entre política predicha y política MCTS (bajando = modelo imita mejor al MCTS) |
+| `value_loss` | MSE entre valor predicho y resultado real (bajando = modelo predice mejor el ganador) |
+| `value_accuracy` | % de posiciones donde el modelo predice correctamente el signo del resultado (ganador/perdedor) |
+| `policy_entropy` | Entropía de la distribución de política predicha (bajando = modelo más decisivo) |
+| `win_rate_vs_random` | Tasa de victorias vs jugador aleatorio (línea base; debe llegar a ~95%+ con buen entrenamiento) |
+| `draw_rate` | Fracción de partidas de auto-juego terminadas en empate |
+| `avg_game_length` | Duración media de partidas de auto-juego (indica calidad táctica) |
+
+---
+
 ## Referencias
 
 - Silver, D. et al. (2017). *Mastering Chess and Shogi by Self-Play with a General Reinforcement Learning Algorithm* — [AlphaZero paper](https://arxiv.org/abs/1712.01815)

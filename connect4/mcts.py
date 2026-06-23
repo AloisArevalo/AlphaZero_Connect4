@@ -49,22 +49,34 @@ class MCTS:
         self.add_dirichlet_noise = add_dirichlet_noise
         self.network.eval()
 
-    def search(self, game: Connect4, num_simulations: Optional[int] = None) -> np.ndarray:
+    def search(
+        self,
+        game: Connect4,
+        num_simulations: Optional[int] = None,
+        root: Optional["MCTSNode"] = None,
+    ) -> Tuple[np.ndarray, "MCTSNode"]:
         """
         Ejecuta MCTS desde el estado actual del juego.
-        Devuelve la política de búsqueda: distribución proporcional a visitas en la raíz.
+
+        Si se pasa un nodo `root` ya explorado, las simulaciones se acumulan sobre
+        ese árbol existente (reutilización de árbol entre turnos).
+
+        Devuelve (política, nodo_raíz) para que el llamador pueda guardar el nodo.
         """
         if num_simulations is None:
             num_simulations = self.config.mcts_simulations
 
-        root = MCTSNode()
         legal_moves = game.get_legal_moves()
 
         if not legal_moves:
-            return np.zeros(self.config.cols, dtype=np.float32)
+            return np.zeros(self.config.cols, dtype=np.float32), MCTSNode()
 
-        # Expandir raíz
-        self._expand(root, game, add_noise=self.add_dirichlet_noise)
+        if root is None:
+            root = MCTSNode()
+
+        # Solo expandir si el nodo no tiene hijos aún
+        if not root.is_expanded:
+            self._expand(root, game, add_noise=self.add_dirichlet_noise)
 
         for _ in range(num_simulations):
             sim_game = game.clone()
@@ -90,7 +102,7 @@ class MCTS:
                 n.value_sum += value
                 value = -value
 
-        return self._get_policy(root, legal_moves)
+        return self._get_policy(root, legal_moves), root
 
     def _select_child(self, node: MCTSNode) -> Tuple[int, MCTSNode]:
         """Selecciona el hijo con mayor puntuación PUCT."""
@@ -102,7 +114,7 @@ class MCTS:
         best_child = None
 
         for col, child in node.children.items():
-            q = child.q_value
+            q = -child.q_value  # negar: child almacena su propia perspectiva, el padre necesita la opuesta
             u = (
                 self.config.c_puct
                 * child.prior

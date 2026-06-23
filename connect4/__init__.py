@@ -1,7 +1,7 @@
 """Paquete AlphaZero para Conecta 4."""
 
 from .config import Config
-from .evaluation import evaluate_models, load_checkpoint, play_game, save_checkpoint
+from .evaluation import evaluate_models, evaluate_vs_random, load_checkpoint, play_game, save_checkpoint
 from .game import Connect4
 from .mcts import MCTS, MCTSNode
 from .network import Connect4Net, ResidualBlock
@@ -24,6 +24,7 @@ __all__ = [
     "train_network",
     "play_game",
     "evaluate_models",
+    "evaluate_vs_random",
     "save_checkpoint",
     "load_checkpoint",
     "train_alphazero",

@@ -75,16 +75,22 @@ def train_network(
     buffer: ReplayBuffer,
     config: Config,
     device: torch.device,
-) -> Tuple[float, float, float]:
+) -> Tuple[float, float, float, float, float]:
     """
     Entrena la red durante varias épocas sobre muestras aleatorias del búfer.
-    Devuelve las pérdidas medias de la última época.
+    Devuelve: (loss_total, value_loss, policy_loss, value_accuracy, policy_entropy)
+
+    - value_accuracy: fracción de posiciones donde sign(pred) == sign(target)
+      (solo sobre resultados decisivos, excluye empates con target==0)
+    - policy_entropy: entropía media H=-sum(p*log(p)) de la política predicha
+      (debe decrecer conforme el modelo se vuelve más decisivo)
     """
     if len(buffer) < config.batch_size:
-        return 0.0, 0.0, 0.0
+        return 0.0, 0.0, 0.0, 0.0, 0.0
 
     network.train()
     avg_total, avg_value, avg_policy = 0.0, 0.0, 0.0
+    avg_value_acc, avg_policy_entropy = 0.0, 0.0
     num_batches = 0
 
     for _ in range(config.train_epochs):
@@ -97,14 +103,46 @@ def train_network(
             )
             loss.backward()
             optimizer.step()
+
+            # Métricas adicionales (sin gradiente)
+            with torch.no_grad():
+                states = torch.tensor(
+                    np.stack([exp[0] for exp in batch]), dtype=torch.float32, device=device
+                )
+                target_policies = torch.tensor(
+                    np.stack([exp[1] for exp in batch]), dtype=torch.float32, device=device
+                )
+                target_values = torch.tensor(
+                    [exp[2] for exp in batch], dtype=torch.float32, device=device
+                ).unsqueeze(1)
+                legal_mask = (target_policies > 0).float()
+
+                policy_logits, pred_values = network(states, legal_mask)
+
+                # Value accuracy: % de posiciones donde el signo coincide (excluyendo empates)
+                decisive = target_values.abs() > 0
+                if decisive.sum() > 0:
+                    correct = (pred_values[decisive].sign() == target_values[decisive].sign())
+                    v_acc = correct.float().mean().item()
+                else:
+                    v_acc = 0.0
+
+                # Policy entropy: H = -sum(p * log(p + eps))
+                probs = torch.softmax(policy_logits, dim=1)
+                entropy = -(probs * (probs + 1e-8).log()).sum(dim=1).mean().item()
+
             avg_total += loss.item()
             avg_value += v_loss
             avg_policy += p_loss
+            avg_value_acc += v_acc
+            avg_policy_entropy += entropy
             num_batches += 1
 
     if num_batches > 0:
         avg_total /= num_batches
         avg_value /= num_batches
         avg_policy /= num_batches
+        avg_value_acc /= num_batches
+        avg_policy_entropy /= num_batches
 
-    return avg_total, avg_value, avg_policy
+    return avg_total, avg_value, avg_policy, avg_value_acc, avg_policy_entropy

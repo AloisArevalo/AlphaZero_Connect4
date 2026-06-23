@@ -70,27 +70,31 @@ def train_alphazero(config: Config) -> None:
             # --- Fase 1: Auto-juego ---
             logger.info(f"Iteración {iteration} | Generando {config.self_play_games_per_iter} partidas...")
             t0 = time.time()
-            experiences = self_play(
+            experiences, draw_count, total_moves_sp = self_play(
                 network, config, device, num_games=config.self_play_games_per_iter
             )
             buffer.add(experiences)
             total_games_played += config.self_play_games_per_iter
             self_play_time = time.time() - t0
+            draw_rate = draw_count / config.self_play_games_per_iter
+            avg_game_length = total_moves_sp / config.self_play_games_per_iter
             logger.info(
                 f"  Auto-juego: {len(experiences)} estados | "
                 f"Búfer: {len(buffer)}/{config.buffer_max_size} | "
+                f"Empates: {draw_rate:.1%} | Longitud media: {avg_game_length:.1f} | "
                 f"Tiempo: {self_play_time:.1f}s"
             )
 
             # --- Fase 2: Entrenamiento ---
             t0 = time.time()
-            avg_loss, avg_v_loss, avg_p_loss = train_network(
+            avg_loss, avg_v_loss, avg_p_loss, value_acc, policy_entropy = train_network(
                 network, optimizer, buffer, config, device
             )
             train_time = time.time() - t0
             logger.info(
                 f"  Entrenamiento: loss={avg_loss:.4f} "
                 f"(value={avg_v_loss:.4f}, policy={avg_p_loss:.4f}) | "
+                f"Val.Acc={value_acc:.1%} | Entropía={policy_entropy:.3f} | "
                 f"Tiempo: {train_time:.1f}s"
             )
 
@@ -100,10 +104,11 @@ def train_alphazero(config: Config) -> None:
                     f"  Torneo de evaluación ({config.eval_games} partidas)..."
                 )
                 t0 = time.time()
-                win_rate = evaluate_models(network, best_network, config, device)
+                win_rate, eval_draw_rate, _ = evaluate_models(network, best_network, config, device)
                 eval_time = time.time() - t0
                 logger.info(
                     f"  Tasa de victorias del modelo actual: {win_rate:.1%} | "
+                    f"Empates eval: {eval_draw_rate:.1%} | "
                     f"Tiempo: {eval_time:.1f}s"
                 )
 
@@ -123,9 +128,8 @@ def train_alphazero(config: Config) -> None:
                 else:
                     logger.info(
                         f"  Modelo actual no supera el umbral ({config.win_threshold:.0%}). "
-                        f"Se mantiene el mejor modelo anterior."
+                        f"Continuando entrenamiento sin revertir."
                     )
-                    network.load_state_dict(copy.deepcopy(best_network.state_dict()))
 
             iter_time = time.time() - iter_start
             logger.info(
