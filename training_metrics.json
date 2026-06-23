@@ -640,5 +640,41 @@
         "win_threshold": 0.52,
         "gpu_temp": 75,
         "timestamp": "2026-06-23 15:33:44"
+    },
+    {
+        "iteration": 19,
+        "total_games": 1600,
+        "loss": 2.1381,
+        "policy_loss": 1.4235,
+        "value_loss": 0.3674,
+        "value_accuracy": 0.8722,
+        "policy_entropy": 1.4188,
+        "win_rate": 1.0,
+        "win_rate_vs_random": null,
+        "draw_rate": 0.05,
+        "avg_game_length": 21.66,
+        "mcts_simulations": 100,
+        "learning_rate": 0.001,
+        "win_threshold": 0.52,
+        "gpu_temp": 73,
+        "timestamp": "2026-06-23 15:48:49"
+    },
+    {
+        "iteration": 21,
+        "total_games": 1800,
+        "loss": 2.0758,
+        "policy_loss": 1.3962,
+        "value_loss": 0.3619,
+        "value_accuracy": 0.8718,
+        "policy_entropy": 1.3916,
+        "win_rate": 1.0,
+        "win_rate_vs_random": null,
+        "draw_rate": 0.08,
+        "avg_game_length": 21.83,
+        "mcts_simulations": 100,
+        "learning_rate": 0.001,
+        "win_threshold": 0.52,
+        "gpu_temp": 74,
+        "timestamp": "2026-06-23 16:02:18"
     }
 ]
